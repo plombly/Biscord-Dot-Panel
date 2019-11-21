@@ -18,11 +18,23 @@ Follow the install instructions below, to get started!
 
 6. chown -R www-data: ./; chmod -R 755 ./
 
-7. nano biscord.conf
+7. edit biscord.conf (look below)
 
-8. cp biscord.conf /etc/nginx/sites-available/
+	7-1. nano biscordnossl.conf (no ssl)
+	
+	7-2. nano biscordssl.conf (with ssl)
 
-9. ln -s /etc/nginx/sites-available/biscord.conf /etc/nginx/sites-enabled/
+8. copy biscord.conf to /etc/nginx/sites-available/ (look below)
+
+	8-1. cp biscordnossl.conf /etc/nginx/sites-available/ (no ssl)
+	
+	8-2. cp biscordssl.conf /etc/nginx/sites-available/ (with ssl)
+
+9. symbolic link /etc/nginx/sites-available/biscord.conf /etc/nginx/sites-enabled/ (look below)
+
+	9-1. ln -s /etc/nginx/sites-available/biscordnossl.conf /etc/nginx/sites-enabled/ (no ssl)
+	
+	9-2. ln -s /etc/nginx/sites-available/biscordssl.conf /etc/nginx/sites-enabled/ (with ssl)
 
 10. nginx -t (make sure it looks like this: ***nginx: the configuration file /etc/nginx/nginx.conf syntax is ok / nginx: configuration file /etc/nginx/nginx.conf test is successful***)
 
